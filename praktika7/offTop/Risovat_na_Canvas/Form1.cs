@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         {
             // Stretches the image to fit the pictureBox.
             Bitmap MyImage;
-            string fileToDisplay = @"D:\temp\1.jpg";
+            string fileToDisplay = @"1.jpg";
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             
             MyImage = new Bitmap(fileToDisplay);
@@ -31,14 +31,15 @@ namespace WindowsFormsApp1
             // Create pen.
             Pen blackPen = new Pen(Color.Black, 30);
             // Create coordinates of points that define line.
-            x+=5;
-            int x1 = 1+x;   //topleft to topright
-            int y1 = 1 + x;
-            int x2 = 300 + x;
-            int y2 = 300 + x;
+            Random rnd = new Random();
 
-            // Draw line to screen.
-            using (var graphics = Graphics.FromImage(MyImage))
+            int x1 = 250;   //topleft to topright
+            int y1 = 250;
+            int x2 = rnd.Next(0,500);
+            int y2 = rnd.Next(0, 500);
+
+      // Draw line to screen.
+      using (var graphics = Graphics.FromImage(MyImage))
             {
                 graphics.DrawLine(blackPen, x1, y1, x2, y2);
             }
