@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+      this.components = new System.ComponentModel.Container();
       this.button1 = new System.Windows.Forms.Button();
       this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.timer1 = new System.Windows.Forms.Timer(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
@@ -48,11 +50,15 @@
       // 
       this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources._1;
       this.pictureBox1.Location = new System.Drawing.Point(22, 21);
-      this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+      this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
       this.pictureBox1.Name = "pictureBox1";
       this.pictureBox1.Size = new System.Drawing.Size(500, 500);
       this.pictureBox1.TabIndex = 2;
       this.pictureBox1.TabStop = false;
+      // 
+      // timer1
+      // 
+      this.timer1.Enabled = true;
       // 
       // Form1
       // 
@@ -73,6 +79,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

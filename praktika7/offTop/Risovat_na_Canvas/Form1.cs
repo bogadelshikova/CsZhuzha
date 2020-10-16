@@ -29,8 +29,8 @@ namespace WindowsFormsApp1
       MyImage = new Bitmap(fileToDisplay);
 
       // Create pen.
-      Pen blackPen = new Pen(Color.Black, 30);
-
+      Pen blackPen = new Pen(Color.MediumVioletRed, 5);
+      MyImage = DrawLuch(MyImage, blackPen);
 
       pictureBox1.ClientSize = new Size(500, 500);
       pictureBox1.Image = (Image)MyImage;
@@ -43,13 +43,16 @@ namespace WindowsFormsApp1
       int x1 = 250;   //topleft to topright
       int y1 = 250;
 
-      int x2 = rnd.Next(0, 500);
-      int y2 = rnd.Next(0, 500);
-
       // Draw line to screen.
       using (var graphics = Graphics.FromImage(MyImage))
       {
-        graphics.DrawLine(blackPen, x1, y1, x2, y2);
+        for (int i = 0; i < 10; i++)
+        {
+          int x2 = rnd.Next(0, 500);
+          int y2 = rnd.Next(0, 500);
+
+          graphics.DrawLine(blackPen, x1, y1, x2, y2);
+        }
       }
       return MyImage;
     }
