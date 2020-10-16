@@ -13,7 +13,9 @@ namespace WindowsFormsApp1
 {
   public partial class Form1 : Form
   {
-    public int x = 0;
+
+    public int x1 = 250;   //topleft to topright
+    public int y1 = 250;
     public Form1()
     {
       InitializeComponent();
@@ -21,32 +23,21 @@ namespace WindowsFormsApp1
 
     private void button1_Click(object sender, EventArgs e)
     {
-      // Stretches the image to fit the pictureBox.
-      Bitmap MyImage;
-      string fileToDisplay = @"1.jpg";
-      pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-      MyImage = new Bitmap(fileToDisplay);
-
-      // Create pen.
-      Pen blackPen = new Pen(Color.MediumVioletRed, 5);
-      MyImage = DrawLuch(MyImage, blackPen);
-
-      pictureBox1.ClientSize = new Size(500, 500);
-      pictureBox1.Image = (Image)MyImage;
+      Random rnd = new Random();
+      x1 = rnd.Next(0, 500); ;   //topleft to topright
+      y1 = rnd.Next(0, 500); ;
     }
     public Bitmap DrawLuch(Bitmap MyImage, Pen blackPen)
     {
 
       Random rnd = new Random();
       // Create coordinates of points that define line.
-      int x1 = 250;   //topleft to topright
-      int y1 = 250;
+
 
       // Draw line to screen.
       using (var graphics = Graphics.FromImage(MyImage))
       {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
           int x2 = rnd.Next(0, 500);
           int y2 = rnd.Next(0, 500);
