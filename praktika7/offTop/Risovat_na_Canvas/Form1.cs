@@ -57,5 +57,21 @@ namespace WindowsFormsApp1
       return MyImage;
     }
 
+    private void timer1_Tick(object sender, EventArgs e)
+    {
+      // Stretches the image to fit the pictureBox.
+      Bitmap MyImage;
+      string fileToDisplay = @"1.jpg";
+      pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+      MyImage = new Bitmap(fileToDisplay);
+
+      // Create pen.
+      Pen blackPen = new Pen(Color.MediumVioletRed, 5);
+      MyImage = DrawLuch(MyImage, blackPen);
+
+      pictureBox1.ClientSize = new Size(500, 500);
+      pictureBox1.Image = (Image)MyImage;
+    }
   }
 }
